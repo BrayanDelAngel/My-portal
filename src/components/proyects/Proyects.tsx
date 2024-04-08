@@ -19,7 +19,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const ItemProyects = [
   {
-    id: uuidv4(),
     path: "/images/Gainback.png",
     name: "Gainback",
     description:
@@ -41,7 +40,6 @@ const ItemProyects = [
     ],
   },
   {
-    id: uuidv4(),
     path: "/images/liconsa.jpg",
     name: "Liconsa",
     description:
@@ -63,7 +61,6 @@ const ItemProyects = [
     ],
   },
   {
-    id: uuidv4(),
     path: "/images/sce.jpg",
     name: "Hospital General de Chimalhuacán",
     description:
@@ -86,7 +83,6 @@ const ItemProyects = [
     ],
   },
   {
-    id: uuidv4(),
     path: "/images/freshCoffe.jpg",
     name: "FreshCoffe",
     description:
@@ -116,7 +112,8 @@ export const Proyects = () => {
         Proyectos
       </h1>
       {ItemProyects.map((ItemProyect, index) => (
-        <ItemsCards key={ItemProyect.id} {...ItemProyect} reverse={index % 2 === 0 ? false : true} />
+        // <ItemsCards key={ItemProyect.id} {...ItemProyect} reverse={index % 2 === 0 ? false : true} />
+        <ItemsCards key={uuidv4()} {...ItemProyect} reverse={index % 2 === 0 ? false : true}/>
       ))}
     </>
   );

@@ -35,7 +35,7 @@ export const FormContact = () => {
         message: "",
       });
     }
-  },[formData]);
+  },[isFormValid]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
