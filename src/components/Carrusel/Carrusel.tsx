@@ -35,7 +35,7 @@ export const Carrusel = ({
     if (!autoSlide) return;
     const slideInterval = setInterval(nextSlide, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  }, []);
+  },[autoSlide, autoSlideInterval]);
   return (
     <div className="max-w-lg  md:max-w-6xl h-auto w-full m-auto relative group shadow-lg rounded-xl">
       {/* _Image and text carrusel */}

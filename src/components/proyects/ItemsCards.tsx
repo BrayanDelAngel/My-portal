@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 interface Props {
+  id:string;
   path: string;
   name: string;
   description: string;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 export const ItemsCards = ({
+  id,
   path,
   name,
   description,

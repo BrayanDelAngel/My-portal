@@ -15,13 +15,15 @@ import {
   SiZoom,
 } from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
+import { v4 as uuidv4 } from 'uuid';
 
 const ItemProyects = [
   {
+    id: uuidv4(),
     path: "/images/Gainback.png",
     name: "Gainback",
     description:
-    "Desarrollo de un sistema web para la gestión y seguimiento de prospectos a través de campañas de Facebook en Gainback.",
+      "Desarrollo de un sistema web para la gestión y seguimiento de prospectos a través de campañas de Facebook en Gainback.",
     listTecnology: [
       "Integración de AWS S3 con Laravel 8 para una gestión segura y eficiente de archivos/multimedia en la nube.",
       "Integración de la API de Facebook Business para la captación de leads.",
@@ -39,6 +41,7 @@ const ItemProyects = [
     ],
   },
   {
+    id: uuidv4(),
     path: "/images/liconsa.jpg",
     name: "Liconsa",
     description:
@@ -60,10 +63,11 @@ const ItemProyects = [
     ],
   },
   {
+    id: uuidv4(),
     path: "/images/sce.jpg",
     name: "Hospital General de Chimalhuacán",
     description:
-    "Desarrollo e implementación de un sistema web para el control de expedientes y estímulos de los empleados.",
+      "Desarrollo e implementación de un sistema web para el control de expedientes y estímulos de los empleados.",
     listTecnology: [
       "Desarrollo del proyecto utilizando Laravel 8 y su ORM Eloquent, basado en el patrón de diseño MVC.",
       "Configuración y desarrollo de un servidor web local utilizando Apache en CentOS 7.",
@@ -76,12 +80,13 @@ const ItemProyects = [
     listIconTecnology: [
       <FaLaravel size={25} className="text-red-500" />,
       <FaCentos size={25} className="text-green-500" />,
-      <SiMysql  size={25} className="text-red-400" />,
+      <SiMysql size={25} className="text-red-400" />,
       <SiTailwindcss size={25} className="text-blue-400" />,
       <SiLivewire size={25} className="text-rose-300" />,
     ],
   },
   {
+    id: uuidv4(),
     path: "/images/freshCoffe.jpg",
     name: "FreshCoffe",
     description:
@@ -96,10 +101,10 @@ const ItemProyects = [
       "Desarrollo de la vista para el usuario final con React.js.",
     ],
     listIconTecnology: [
-        <FaLaravel size={25} className="text-red-500" />,
-      <SiMysql  size={25} className="text-blue-400" />,
+      <FaLaravel size={25} className="text-red-500" />,
+      <SiMysql size={25} className="text-blue-400" />,
       <SiTailwindcss size={25} className="text-blue-400" />,
-      <FaReact  size={25} className="text-blue-600" />,
+      <FaReact size={25} className="text-blue-600" />,
     ],
   },
 ];
@@ -111,7 +116,7 @@ export const Proyects = () => {
         Proyectos
       </h1>
       {ItemProyects.map((ItemProyect, index) => (
-        <ItemsCards key={index} {...ItemProyect}  reverse={index % 2 === 0 ? false : true}/>
+        <ItemsCards key={ItemProyect.id} {...ItemProyect} reverse={index % 2 === 0 ? false : true} />
       ))}
     </>
   );
