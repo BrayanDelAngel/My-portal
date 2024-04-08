@@ -35,7 +35,7 @@ export const Carrusel = ({
     if (!autoSlide) return;
     const slideInterval = setInterval(nextSlide, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  },[autoSlide, autoSlideInterval]);
+  }, [autoSlide, autoSlideInterval]);
   return (
     <div className="max-w-lg  md:max-w-6xl h-auto w-full m-auto relative group shadow-lg rounded-xl">
       {/* _Image and text carrusel */}
@@ -69,14 +69,14 @@ export const Carrusel = ({
       </div>
       <div className="bottom-1 absolute md:bottom-4 right-0 left-0">
         <div className="flex items-center justify-center gap-2">
-          {slides.map((_, i) => (
+          {slides.map((slide, index) => (
             <div
-            key={uuidv4()}
-            onClick={() => goToSlide(i)}
+              key={index}
+              onClick={() => goToSlide(index)}
               className={`
-              transition-all w-3 h-3 bg-blue-500 rounded-full cursor-pointer
-              ${currentIndex === i ? "p-2" : "bg-opacity-50"}
-            `}
+      transition-all w-3 h-3 bg-blue-500 rounded-full cursor-pointer
+      ${currentIndex === index ? "p-2" : "bg-opacity-50"}
+    `}
             />
           ))}
         </div>
