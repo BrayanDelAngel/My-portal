@@ -13,7 +13,7 @@ export const Perfil = () => {
       <div className="flex flex-col md:flex-row w-full">
         <div className="w-full md:w-1/2 ">
           <Image
-            src={"/images/photo_2 (2).png"}
+            src={"/images/photo_2_SinFondo.png"}
             width={500}
             height={300}
             alt="Brayan Efrain Del Angel Martinez"
