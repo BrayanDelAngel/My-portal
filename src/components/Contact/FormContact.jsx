@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
 
@@ -35,7 +35,7 @@ export const FormContact = () => {
         message: "",
       });
     }
-  },[!isFormValid,setErrors]);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -49,15 +49,15 @@ export const FormContact = () => {
           body: JSON.stringify(formData),
         });
         if (response.ok) {
-          toastr.success('Correo electrónico enviado exitosamente.', '', { "positionClass" : "toast-bottom-right"}, { timeOut: 3000 });
+          toastr.success('Correo electrónico enviado exitosamente.', '', { "positionClass": "toast-bottom-right" }, { timeOut: 3000 });
         } else {
-          toastr.error('Error al enviar el correo electrónico.', '', { "positionClass" : "toast-bottom-right"}, { timeOut: 3000 });
+          toastr.error('Error al enviar el correo electrónico.', '', { "positionClass": "toast-bottom-right" }, { timeOut: 3000 });
         }
       } catch (error) {
-        toastr.error('Error al enviar el correo electrónico.', '', { "positionClass" : "toast-bottom-right"}, { timeOut: 3000 });
+        toastr.error('Error al enviar el correo electrónico.', '', { "positionClass": "toast-bottom-right" }, { timeOut: 3000 });
       }
     } else {
-      toastr.error('Por favor, completa correctamente todos los campos.', '', { "positionClass" : "toast-bottom-right"}, { timeOut: 3000 });
+      toastr.error('Por favor, completa correctamente todos los campos.', '', { "positionClass": "toast-bottom-right" }, { timeOut: 3000 });
     }
   };
 
@@ -135,10 +135,11 @@ export const FormContact = () => {
                 name="name"
                 placeholder="Tu nombre"
                 onChange={handleChange}
-                onBlur={validateName}
+                onBlur={validateName} // Aquí llamamos a la función de validación en el evento onBlur
                 value={formData.name}
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
               />
+
               {errors.name && <div className="text-red-600">{errors.name}</div>}
             </div>
             <div className="mb-4">
@@ -154,7 +155,7 @@ export const FormContact = () => {
                 name="email"
                 placeholder="tu@correo.com"
                 onChange={handleChange}
-                onBlur={validateEmail}
+                onBlur={validateEmail} // Aquí llamamos a la función de validación en el evento onBlur
                 value={formData.email}
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
               />
@@ -172,7 +173,7 @@ export const FormContact = () => {
                 name="phone"
                 placeholder="55-12-34-567"
                 onChange={handleChange}
-                onBlur={validatePhone}
+                onBlur={validatePhone} // Aquí llamamos a la función de validación en el evento onBlur
                 value={formData.phone}
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
               />
@@ -193,7 +194,7 @@ export const FormContact = () => {
                 name="message"
                 placeholder="Tu mensaje"
                 onChange={handleChange}
-                onBlur={validateMessage}
+                onBlur={validateMessage} // Aquí llamamos a la función de validación en el evento onBlur
                 value={formData.message}
                 className="w-full px-3 py-2 border border-blue-300 rounded-md focus:outline-none focus:ring focus:ring-blue-200 focus:border-blue-400"
               />
@@ -208,9 +209,8 @@ export const FormContact = () => {
               hover:bg-blue-600 focus:outline-none
               hover:text-white
               hover:-translate-y-2  
-              hover:after:bottom-0 ${
-                !isFormValid() && "opacity-50 cursor-not-allowed"
-              }`}
+              hover:after:bottom-0 ${!isFormValid() && "opacity-50 cursor-not-allowed"
+                  }`}
                 disabled={!isFormValid()}
               >
                 Enviar

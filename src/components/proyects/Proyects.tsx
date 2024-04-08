@@ -32,11 +32,11 @@ const ItemProyects = [
       "Configuración de estilos con Bootstrap 5 CSS.",
     ],
     listIconTecnology: [
-      <FaLaravel size={25} className="text-red-500" />,
-      <FaSquareFacebook size={25} className="text-blue-700" />,
-      <SiGooglecalendar size={25} className="text-blue-500" />,
-      <SiZoom size={25} className="text-blue-400" />,
-      <FaBootstrap size={25} className="text-purple-700" />,
+      <FaLaravel key="laravel" size={25} className="text-red-500" />,
+      <FaSquareFacebook key="facebook" size={25} className="text-blue-700" />,
+      <SiGooglecalendar key="google-calendar" size={25} className="text-blue-500" />,
+      <SiZoom key="zoom" size={25} className="text-blue-400" />,
+      <FaBootstrap key="bootstrap" size={25} className="text-purple-700" />,
     ],
   },
   {
@@ -53,11 +53,11 @@ const ItemProyects = [
       "Peticiones en tiempo real con Laravel Livewire.",
     ],
     listIconTecnology: [
-      <FaLaravel size={25} className="text-red-500" />,
-      <FaCentos size={25} className="text-green-500" />,
-      <DiMsqlServer size={25} className="text-red-400" />,
-      <SiTailwindcss size={25} className="text-blue-400" />,
-      <SiLivewire size={25} className="text-rose-300" />,
+      <FaLaravel key="laravel-liconsa" size={25} className="text-red-500" />,
+      <FaCentos key="centos-liconsa" size={25} className="text-green-500" />,
+      <DiMsqlServer key="mysql-liconsa" size={25} className="text-red-400" />,
+      <SiTailwindcss key="tailwind-liconsa" size={25} className="text-blue-400" />,
+      <SiLivewire key="livewire-liconsa" size={25} className="text-rose-300" />,
     ],
   },
   {
@@ -75,11 +75,11 @@ const ItemProyects = [
       "Desarrollo del proyecto mediante la metodología SCRUM.",
     ],
     listIconTecnology: [
-      <FaLaravel size={25} className="text-red-500" />,
-      <FaCentos size={25} className="text-green-500" />,
-      <SiMysql size={25} className="text-red-400" />,
-      <SiTailwindcss size={25} className="text-blue-400" />,
-      <SiLivewire size={25} className="text-rose-300" />,
+      <FaLaravel key="laravel-se" size={25} className="text-red-500" />,
+      <FaCentos  key="centos-se" size={25} className="text-green-500" />,
+      <SiMysql key="mysql-se" size={25} className="text-red-400" />,
+      <SiTailwindcss key="tailwind-se" size={25} className="text-blue-400" />,
+      <SiLivewire key="talwind-se" size={25} className="text-rose-300" />,
     ],
   },
   {
@@ -97,10 +97,10 @@ const ItemProyects = [
       "Desarrollo de la vista para el usuario final con React.js.",
     ],
     listIconTecnology: [
-      <FaLaravel size={25} className="text-red-500" />,
-      <SiMysql size={25} className="text-blue-400" />,
-      <SiTailwindcss size={25} className="text-blue-400" />,
-      <FaReact size={25} className="text-blue-600" />,
+      <FaLaravel key="laravel-p" size={25} className="text-red-500" />,
+      <SiMysql key="mysql-p" size={25} className="text-blue-400" />,
+      <SiTailwindcss key="tailwind-p" size={25} className="text-blue-400" />,
+      <FaReact key="react-p" size={25} className="text-blue-600" />,
     ],
   },
 ];
@@ -112,8 +112,8 @@ export const Proyects = () => {
         Proyectos
       </h1>
       {ItemProyects.map((ItemProyect, index) => (
-        // <ItemsCards key={ItemProyect.id} {...ItemProyect} reverse={index % 2 === 0 ? false : true} />
-        <ItemsCards key={uuidv4()} {...ItemProyect} reverse={index % 2 === 0 ? false : true}/>
+        <ItemsCards key={index} {...ItemProyect} reverse={index % 2 === 0 ? false : true} />
+        // <ItemsCards key={uuidv4()} {...ItemProyect} reverse={index % 2 === 0 ? false : true}/>
       ))}
     </>
   );

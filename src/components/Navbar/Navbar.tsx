@@ -72,16 +72,20 @@ export const Navbar = () => {
   const menuRef = useRef(null);
 
   const handleOutsideClick = (event: MouseEvent) => {
-    // Especifica el tipo de evento como MouseEvent
     if (
       menuRef.current &&
-      "contains" in menuRef.current &&
-      !menuRef.current.contains(event.target as Node)
+      typeof menuRef.current !== "undefined" && // Verifica que menuRef.current no sea undefined
+      menuRef.current !== null // Verifica que menuRef.current no sea null
     ) {
-      setIsMenuOpen(false);
+      // Asegúrate de que menuRef.current sea de tipo HTMLElement
+      const menuElement = menuRef.current as HTMLElement;
+
+      // Verifica si el evento target está contenido dentro del menú
+      if (menuElement.contains(event.target as Node)) {
+        setIsMenuOpen(false);
+      }
     }
   };
-
   useEffect(() => {
     document.addEventListener("mousedown", handleOutsideClick);
 
