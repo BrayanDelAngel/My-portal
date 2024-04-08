@@ -113,7 +113,7 @@ export const Proyects = () => {
       </h1>
       {ItemProyects.map((ItemProyect, index) => (
         // <ItemsCards key={ItemProyect.id} {...ItemProyect} reverse={index % 2 === 0 ? false : true} />
-        <ItemsCards key={index} {...ItemProyect} reverse={index % 2 === 0 ? false : true}/>
+        <ItemsCards key={uuidv4()} {...ItemProyect} reverse={index % 2 === 0 ? false : true}/>
       ))}
     </>
   );
