@@ -39,27 +39,27 @@ const ItemProyects = [
       <FaBootstrap key="bootstrap" size={25} className="text-purple-700" />,
     ],
   },
-  {
-    path: "/images/liconsa.jpg",
-    name: "Liconsa",
-    description:
-      "Desarrollo e implementación de un sistema web para el control de inventarios.",
-    listTecnology: [
-      "Desarrollo del proyecto utilizando metodología ágil XP.",
-      "Configuración de servidor Apache con CentOS 7.",
-      "Se utilizó SQL Server como gestor de la base de datos.",
-      "Utilización de ORM de Laravel para solicitudes a la BD.",
-      "Configuración de estilos con Tailwind CSS.",
-      "Peticiones en tiempo real con Laravel Livewire.",
-    ],
-    listIconTecnology: [
-      <FaLaravel key="laravel-liconsa" size={25} className="text-red-500" />,
-      <FaCentos key="centos-liconsa" size={25} className="text-green-500" />,
-      <DiMsqlServer key="mysql-liconsa" size={25} className="text-red-400" />,
-      <SiTailwindcss key="tailwind-liconsa" size={25} className="text-blue-400" />,
-      <SiLivewire key="livewire-liconsa" size={25} className="text-rose-300" />,
-    ],
-  },
+  // {
+  //   path: "/images/liconsa.jpg",
+  //   name: "Liconsa",
+  //   description:
+  //     "Desarrollo e implementación de un sistema web para el control de inventarios.",
+  //   listTecnology: [
+  //     "Desarrollo del proyecto utilizando metodología ágil XP.",
+  //     "Configuración de servidor Apache con CentOS 7.",
+  //     "Se utilizó SQL Server como gestor de la base de datos.",
+  //     "Utilización de ORM de Laravel para solicitudes a la BD.",
+  //     "Configuración de estilos con Tailwind CSS.",
+  //     "Peticiones en tiempo real con Laravel Livewire.",
+  //   ],
+  //   listIconTecnology: [
+  //     <FaLaravel key="laravel-liconsa" size={25} className="text-red-500" />,
+  //     <FaCentos key="centos-liconsa" size={25} className="text-green-500" />,
+  //     <DiMsqlServer key="mysql-liconsa" size={25} className="text-red-400" />,
+  //     <SiTailwindcss key="tailwind-liconsa" size={25} className="text-blue-400" />,
+  //     <SiLivewire key="livewire-liconsa" size={25} className="text-rose-300" />,
+  //   ],
+  // },
   {
     path: "/images/sce.jpg",
     name: "Hospital General de Chimalhuacán",
